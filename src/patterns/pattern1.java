@@ -155,6 +155,25 @@ public class pattern1 {
    }
    
    
+   static void leftTrangleAlpha(int x)
+   { /*
+	   E
+	   ED
+	   EDC
+	   EDCB
+	   EDCBA */
+	   for(int i = 1;  i <= x; i++)
+	   {
+		   char ch= (char)(65+x-1);
+		   for(int j = 1; j<=i; j++)
+		   {
+			   System.out.print(ch);
+			   ch--;
+		   }
+		   System.out.println();
+	   }
+   }
+   
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		square(4);
@@ -164,6 +183,7 @@ public class pattern1 {
 		invertedLeftTraiangle(5);
 		numberInvertedLeftTraiangle(5);
 		Traiangle(5);
+		leftTrangleAlpha(5);
 	}
 
 }
