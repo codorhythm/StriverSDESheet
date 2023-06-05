@@ -183,7 +183,7 @@ public class pattern1 {
 		invertedLeftTraiangle(5);
 		numberInvertedLeftTraiangle(5);
 		Traiangle(5);
-		leftTrangleAlpha(5);
+		leftTrangleAlpha(4);
 	}
 
 }
