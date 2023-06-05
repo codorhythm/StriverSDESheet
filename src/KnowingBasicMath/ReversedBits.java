@@ -22,45 +22,18 @@ public class ReversedBits {
 	    }
 
 	    return result;
-        // code here
-//        long ans = 0;
-//        int pv = 1;
-//        while(X!=0)
-//        {
-//            long rem = X%2;
-//            X = X/2;
-//            ans = ans + rem *  pv;
-//            pv = pv *10;
-//        }
-//        System.out.println(ans+" "+"ans");
-//        long revAns = 0;
-//        while(ans!=0)
-//        {
-//            long ld = ans%10;
-//            revAns = revAns * 10 + ld;
-//            ans/=10;
-//        } System.out.println(revAns);
-//        revAns*=1000000000000000000L;
-//        System.out.println(revAns+" "+"revAns");
-//        
-//        long finalAns = 0;
-//        int pv2 = 1;
-//        while(revAns!=0)
-//        {
-//            long ld = revAns%10;
-//            finalAns = finalAns + ld*pv2;
-//            pv2*=2;
-//            revAns/=10;
-//        }
-//        System.out.println("pv = "+pv);
-//        return finalAns;
+ //ANY NUMBER THAT COMES AS A DECIMA NUMBER WE PERFORM AND AND CHCEK 
+	    //WHETHER THE RIGHT MOST BIT IS 1 THAT MEANS 2 TO THE POWER STH IS THERE
+	    // SO WE OR THAT TO RESULT AND WE BASICALLY KEEP RIGHT SHIFTING X
+	   // AND LEFT SHIFTING RESULT --> HOW ? 1100 LEFT SHIFT 110 LEFT SHIFT 11 --> LEFT SHIFT 1 SO ON 
+	    // AND RESULT 0 <-- RIGHT SHIFT 0 <-- RIGHT SHIFT UNTIL WE GET OPERATION OF AND AS 1 
         
        
     }
 
 	public static void main(String[] args)  {
 		// TODO Auto-generated method stub
-		long X = 12;
+		long X = 123;
 		System.out.println(reversedBits(X));
 	}
 
