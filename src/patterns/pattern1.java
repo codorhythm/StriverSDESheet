@@ -174,6 +174,26 @@ public class pattern1 {
 	   }
    }
    
+   
+   static void invertedT(int n)
+   {
+	   int x = n;
+       for(int i = n; i >=1; i--)
+       {
+           for(int j = 0; j <n-x; j++)
+           {
+               System.out.print(" ");
+           }
+           
+           for(int j = (2*i)-1; j >0; j--)
+           {
+               System.out.print("*");   
+           }
+           
+           System.out.println(); x--;
+       }
+   }
+   
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		square(4);
@@ -184,6 +204,7 @@ public class pattern1 {
 		numberInvertedLeftTraiangle(5);
 		Traiangle(5);
 		leftTrangleAlpha(3);
+		invertedT(5);
 	}
 
 }
