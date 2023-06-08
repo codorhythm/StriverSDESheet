@@ -155,6 +155,11 @@ public class pattern1 {
    }
    
    
+   
+
+       
+   
+   
    static void leftTrangleAlpha(int x)
    { /*
 	   E
@@ -194,6 +199,46 @@ public class pattern1 {
        }
    }
    
+   public static void diamond(int n) {
+	      
+       int n1 = n/2;
+       int n2 = n-n1;
+      for(int i = 1; i <= n1+1; i++)
+      {
+          //spaces
+         
+          for(int j = -1; j<=n1-i; j++)
+          {
+              System.out.print(" ");
+          }
+
+          //starts
+
+          for(int j = 0; j < 2*i -1; j++)
+          {
+              System.out.print("*");
+          }
+
+          System.out.println();
+      }
+int n3 = n2;
+      for(int i = 1; i<=n2; i++)
+      {
+          for(int j = 1; j<=i ; j++)
+          {
+              System.out.print(" ");
+          }
+
+          for(int j = 1; j<=2*n3-1; j++)
+          {
+              System.out.print("*");
+          }
+System.out.println();
+          n3--;
+      }
+  }
+
+   
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		square(4);
@@ -205,6 +250,7 @@ public class pattern1 {
 		Traiangle(5);
 		leftTrangleAlpha(3);
 		invertedT(5);
+		diamond(9);
 	}
 
 }
