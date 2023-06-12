@@ -34,29 +34,48 @@ public class Main {
 
 class Solution {
     int print2largest(int arr[], int n) {
-        // code here
-        int secondMax = -1;
-        int max = arr[0];
-        int diff = Integer.MAX_VALUE;
-        for(int i = 1; i < n; i++ )
-        {
+       //optimal approach
+       
+       int max = arr[0]; int secondLargest = -1;
+       for(int i = 1;  i < n; i++)
+       {
            if(arr[i]>max)
            {
+               secondLargest = max;
                max = arr[i];
-            
            }
+           else if(arr[i]<max && arr[i]>secondLargest)
+           {
+               secondLargest = arr[i];
+           }
+       }
+       
+       return secondLargest;
+       
+       
+        // Bettr Approach
+        // int secondMax = -1;
+        // int max = arr[0];
+        // int diff = Integer.MAX_VALUE;
+        // for(int i = 1; i < n; i++ )
+        // {
+        //   if(arr[i]>max)
+        //   {
+        //       max = arr[i];
+            
+        //   }
            
-        }
+        // }
         
-        for(int i = 0; i < n; i++)
-        {
-            if(max - arr[i] < diff && arr[i] != max)
-            {
-                secondMax = arr[i];
-                diff = max - arr[i];
-            }
-        }
+        // for(int i = 0; i < n; i++)
+        // {
+        //     if(max - arr[i] < diff && arr[i] != max)
+        //     {
+        //         secondMax = arr[i];
+        //         diff = max - arr[i];
+        //     }
+        // }
         
-        return secondMax;
+        // return secondMax;
     }
 }
