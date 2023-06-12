@@ -36,21 +36,21 @@ class Solution {
     int print2largest(int arr[], int n) {
        //optimal approach
        
-       int max = arr[0]; int secondLargest = -1;
-       for(int i = 1;  i < n; i++)
-       {
-           if(arr[i]>max)
-           {
-               secondLargest = max;
-               max = arr[i];
-           }
-           else if(arr[i]<max && arr[i]>secondLargest)
-           {
-               secondLargest = arr[i];
-           }
-       }
+    //   int max = arr[0]; int secondLargest = -1;
+    //   for(int i = 1;  i < n; i++)
+    //   {
+    //       if(arr[i]>max)
+    //       {
+    //           secondLargest = max;
+    //           max = arr[i];
+    //       }
+    //       else if(arr[i]<max && arr[i]>secondLargest)
+    //       {
+    //           secondLargest = arr[i];
+    //       }
+    //   }
        
-       return secondLargest;
+    //   return secondLargest;
        
        
         // Bettr Approach
@@ -77,5 +77,21 @@ class Solution {
         // }
         
         // return secondMax;
+        
+        
+        //BRUTE FORCE
+        Arrays.sort(arr);
+        int max = arr[n-1];
+        int secondLargest = -1;
+        for(int i = n-2; i >=0; i--)
+        {
+            if(arr[i]!=max)
+            {
+                secondLargest = arr[i];
+                break;
+            }
+        }
+        
+        return secondLargest;
     }
 }
