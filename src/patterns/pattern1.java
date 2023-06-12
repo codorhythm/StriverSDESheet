@@ -1,5 +1,7 @@
 package patterns;
 
+import java.util.ArrayList;
+
 public class pattern1 {
 	
    public static void square(int x)
@@ -237,10 +239,14 @@ System.out.println();
           n3--;
       }
   }
+   
+   
+   
 
    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		square(4);
 		leftTraiangle(4);
 		numberleftTraiangle(4);
