@@ -32,25 +32,41 @@ public class GFG {
 
 class Solution {
     int remove_duplicate(int arr[],int N){
-        // code here
-        ArrayList<Integer> list = new ArrayList<>();
-        list.add(arr[0]);
-        int x = arr[0];
-        for(int i = 1;  i < N; i++)
+        //Optimal
+        int i = 0; int j = i+1;
+        while(i<N && j<N)
         {
-            if(arr[i]!=x)
+            if(arr[i] != arr[j])
             {
-                list.add(arr[i]);
+                i+=1;
+                arr[i] = arr[j];
+                
             }
             
-            x = arr[i];
+            j+=1;
         }
         
-        for(int i = 0; i<list.size(); i++)
-        {
-            arr[i] = list.get(i);
-        }
+        return i+1;
         
-        return list.size();
+        // Brute force
+        // ArrayList<Integer> list = new ArrayList<>();
+        // list.add(arr[0]);
+        // int x = arr[0];
+        // for(int i = 1;  i < N; i++)
+        // {
+        //     if(arr[i]!=x)
+        //     {
+        //         list.add(arr[i]);
+        //     }
+            
+        //     x = arr[i];
+        // }
+        
+        // for(int i = 0; i<list.size(); i++)
+        // {
+        //     arr[i] = list.get(i);
+        // }
+        
+        // return list.size();
     }
 }
