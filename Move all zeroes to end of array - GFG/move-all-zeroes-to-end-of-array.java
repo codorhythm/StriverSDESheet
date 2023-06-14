@@ -35,21 +35,43 @@ public class Main {
 class Solution {
     void pushZerosToEnd(int[] arr, int n) {
         //optimal
-        int j = 0;
+        int j = -1;
         for(int i = 0; i < n; i++)
         {
-            
-            while(j<n && arr[j]!=0)
+            if(arr[i] == 0)
             {
-                j++;
+                j= i;
+                break;
             }
-            if(i>j && arr[i]!=0)
-            {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
+        }   
+        
+        if(j == -1)
+        {
+            return;
         }
+            for(int i = j+1; i<n; i++)
+            {
+                if(arr[i]!=0)
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                    j++;
+                }
+            }
+            
+         
+            // while(j<n && arr[j]!=0)
+            // {
+            //     j++;
+            // }
+            // if(i>j && arr[i]!=0)
+            // {
+            //     int temp = arr[i];
+            //     arr[i] = arr[j];
+            //     arr[j] = temp;
+            // }
+        // }
         
         
         // Brute Force
