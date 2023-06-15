@@ -54,31 +54,103 @@ class Solution
     //Function to return a list containing the union of the two arrays.
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
     {
-        // add your code here
-        HashMap<Integer, Integer> maps = new HashMap<>();
+        
+        int i = 0, j = 0;int x = -1;
         ArrayList<Integer> list = new ArrayList<>();
-        for(int i = 0; i <n ; i++)
+        while(i< arr1.length && j<arr2.length)
         {
-            if(!maps.containsKey(arr1[i]))
+            if(arr1[i] <= arr2[j])
             {
-                 maps.put(arr1[i],1);
-                 list.add(arr1[i]);
+                if(x!=arr1[i])
+                {
+                    list.add(arr1[i]);
+                    x = arr1[i];
+                           
+                }
+                    i++;     
+
             }
+            else if(arr2[j] < arr1[i])
+            {
+                if(x!=arr2[j])
+                {
+                     list.add(arr2[j]);
+                     x = arr2[j];     
+                }
+               
+                j++;
+            }
+          
             
         }
         
-        
-        for(int i = 0; i < m ; i++)
+        while(i<arr1.length)
         {
-            if(!maps.containsKey(arr2[i]))
+            if(x!=arr1[i])
             {
-                 maps.put(arr2[i],1);
-                 list.add(arr2[i]);
+                list.add(arr1[i]);
+                x = arr1[i];
             }
+            i++;
         }
         
-        Collections.sort(list);
+        
+        while(j<arr2.length)
+        {
+            if(x!=arr2[j])
+            {
+                list.add(arr2[j]);
+                x = arr2[j];
+            }
+            j++;
+        }
+        
         return list;
+        //Brute Force 2
+        // TreeSet<Integer> ts = new TreeSet<>();
+        // for(int i = 0; i < arr1.length; i++)
+        // {
+        //     ts.add(arr1[i]);
+        // }
+        
+        // for(int i = 0; i < arr2.length; i++)
+        // {
+        //     ts.add(arr2[i]);
+        // }
+        
+        // ArrayList<Integer> list = new ArrayList<>();
+        
+        // for (Integer value : ts)
+        // {
+        //     list.add(value);
+        // }
+        
+        // return list;
+        //Brut force 1
+        // HashMap<Integer, Integer> maps = new HashMap<>();
+        // ArrayList<Integer> list = new ArrayList<>();
+        // for(int i = 0; i <n ; i++)
+        // {
+        //     if(!maps.containsKey(arr1[i]))
+        //     {
+        //          maps.put(arr1[i],1);
+        //          list.add(arr1[i]);
+        //     }
+            
+        // }
+        
+        
+        // for(int i = 0; i < m ; i++)
+        // {
+        //     if(!maps.containsKey(arr2[i]))
+        //     {
+        //          maps.put(arr2[i],1);
+        //          list.add(arr2[i]);
+        //     }
+        // }
+        
+        // Collections.sort(list);
+        // return list;
     }
 }
 
