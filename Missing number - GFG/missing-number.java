@@ -40,7 +40,17 @@ class Compute {
     public static int missingNumber(int A[], int N)
     {
         
-         // Optimal Approach 
+         // Optimal Approach -2
+         int xor1 = 0, xor2 = 0;
+         for(int i = 0; i < N; i++)
+         {
+             xor2 = xor2 ^ A[i];
+             xor1 = xor1 ^ (i+1);
+         }
+         
+         return (xor1) ^ xor2;
+        
+         // Optimal Approach -1
         //  int totalsum = (N*(N+1))/2;
         //  int sum = 0;
         //  for(int i = 0; i < N; i++)
@@ -51,21 +61,21 @@ class Compute {
         //  return totalsum - sum;
         
         //Better Approach
-        int hash[] = new int[N+1];
-        for(int i = 0; i<N; i++)
-        {
-            hash[A[i]] = 1;
-        }
+        // int hash[] = new int[N+1];
+        // for(int i = 0; i<N; i++)
+        // {
+        //     hash[A[i]] = 1;
+        // }
         
-        for(int i = 1; i < hash.length; i++)
-        {
-            if(hash[i] == 0)
-            {
-                return i;
-            }
-        }
+        // for(int i = 1; i < hash.length; i++)
+        // {
+        //     if(hash[i] == 0)
+        //     {
+        //         return i;
+        //     }
+        // }
         
-        return -1;
+        // return -1;
         
         //Brute Force 
         // for(int i = 1; i <= N; i++)
