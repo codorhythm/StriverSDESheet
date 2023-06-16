@@ -39,14 +39,34 @@ class Compute {
     
     public static int missingNumber(int A[], int N)
     {
-         // Your code goes here
-         int totalsum = (N*(N+1))/2;
-         int sum = 0;
-         for(int i = 0; i < N; i++)
-         {
-             sum += A[i];
-         }
+        
+         // Optimal Approach 
+        //  int totalsum = (N*(N+1))/2;
+        //  int sum = 0;
+        //  for(int i = 0; i < N; i++)
+        //  {
+        //      sum += A[i];
+        //  }
          
-         return totalsum - sum;
+        //  return totalsum - sum;
+        
+        //Brute Force 
+        for(int i = 1; i <= N; i++)
+        {int flag = 0;
+            for(int j = 0; j < N; j++)
+            {
+                if(A[j] == i)
+                {
+                    flag = 1;
+                    break;
+                }
+            }
+            if(flag == 0)
+            {
+                return i;
+            }
+        }
+        
+        return -1;
     }
 }
