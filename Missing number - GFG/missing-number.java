@@ -50,23 +50,40 @@ class Compute {
          
         //  return totalsum - sum;
         
-        //Brute Force 
-        for(int i = 1; i <= N; i++)
-        {int flag = 0;
-            for(int j = 0; j < N; j++)
-            {
-                if(A[j] == i)
-                {
-                    flag = 1;
-                    break;
-                }
-            }
-            if(flag == 0)
+        //Better Approach
+        int hash[] = new int[N+1];
+        for(int i = 0; i<N; i++)
+        {
+            hash[A[i]] = 1;
+        }
+        
+        for(int i = 1; i < hash.length; i++)
+        {
+            if(hash[i] == 0)
             {
                 return i;
             }
         }
         
         return -1;
+        
+        //Brute Force 
+        // for(int i = 1; i <= N; i++)
+        // {int flag = 0;
+        //     for(int j = 0; j < N; j++)
+        //     {
+        //         if(A[j] == i)
+        //         {
+        //             flag = 1;
+        //             break;
+        //         }
+        //     }
+        //     if(flag == 0)
+        //     {
+        //         return i;
+        //     }
+        // }
+        
+        // return -1;
     }
 }
