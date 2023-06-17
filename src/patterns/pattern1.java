@@ -240,8 +240,19 @@ System.out.println();
       }
   }
    
-   
-   
+ public static void NumberTriangle(int n)
+ {
+	 int x = 1;
+	 for(int i = 1; i <=n; i++)
+	 {
+		 for(int j = 1; j <=i; j++)
+		 {
+			 System.out.print(x);
+			 x++;
+		 }
+		 System.out.println();
+	 }
+ }
 
    
 	public static void main(String[] args) {
@@ -257,6 +268,7 @@ System.out.println();
 		leftTrangleAlpha(3);
 		invertedT(5);
 		diamond(9);
+		NumberTriangle(5);
 	}
 
 }
